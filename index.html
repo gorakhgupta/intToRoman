@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main_div">
+        <p class="head">Please, 🙂 Enter integer <=10,000 To convert into Roman</p>
+    
+    <input id="inputdata" type="number"  value="" placeholder="ENTER THE DATA IN INT ">
+    <button onclick="fun()">Click</button>
+    <h1 id="k">OUTPUT 😄</h1>
+    <h2 id="g"></h2>
+ 
+</div>
+
+    <script>
+const fun = ()=>{
+   let num = document.getElementById('inputdata').value;
+  var obj = {
+    M:1000,
+    CM:900,
+    D:500,
+    CD:400,
+    C:100,
+    XC:90,
+    L:50,
+    XL:40,
+    X:10,
+    IX:9,
+    V:5,
+    IV:4,
+    I:1
+};
+  let roman = '';
+  for ( key in obj ) {
+    while ( num >= obj[key] ) {
+      roman += key;
+      num -= obj[key];
+    }
+    console.log(key,obj[key]);
+    document.getElementById('k').style.display='inline';
+  }
+document.getElementById('g').innerHTML = roman;
+}
+
+    </script>
+</body>
+</html>
